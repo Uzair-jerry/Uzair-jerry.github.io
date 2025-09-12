@@ -2,36 +2,351 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Uzair Jerry | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Uzair Ahmad | Marketing Automation Solution Architect</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #e0e6f1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Hero Section */
+    header.hero {
+      text-align: center;
+      padding: 100px 20px 80px;
+      animation: fadeInDown 1.2s ease forwards;
+    }
+
+    header.hero h1 {
+      font-size: 3.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #f9f9f9;
+      text-shadow: 0 0 10px #845ef7;
+    }
+
+    header.hero .tagline {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #c5b7f0;
+      margin-bottom: 25px;
+      letter-spacing: 0.06em;
+    }
+
+    header.hero .description {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+      color: #d1d4e0;
+    }
+
+    header.hero .btn-primary {
+      background: #845ef7;
+      padding: 14px 36px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      color: #fff;
+      box-shadow: 0 5px 15px rgba(132, 94, 247, 0.6);
+      transition: background 0.3s ease;
+      display: inline-block;
+    }
+
+    header.hero .btn-primary:hover {
+      background: #6b43c3;
+      box-shadow: 0 8px 25px rgba(107, 67, 195, 0.8);
+    }
+
+    /* Section Titles */
+    h2.section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 40px;
+      color: #d1c4e9;
+      text-shadow: 0 0 5px #8e7cc3;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    /* About Section */
+    section#about {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 15px;
+      padding: 30px 40px;
+      margin-bottom: 70px;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    section#about p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #d6d7e2;
+    }
+
+    /* Expertise Section */
+    section#expertise {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 20px;
+      margin-bottom: 70px;
+      animation: fadeInUp 1.8s ease forwards;
+    }
+
+    .expertise-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 25px 20px;
+      box-shadow: 0 0 15px rgba(132, 94, 247, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(132, 94, 247, 0.9);
+    }
+
+    .expertise-card h3 {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #ede8f8;
+    }
+
+    .expertise-card p {
+      font-weight: 300;
+      font-size: 1rem;
+      color: #c5b7f0;
+      line-height: 1.5;
+    }
+
+    /* Projects Section */
+    section#projects {
+      animation: fadeInUp 2.1s ease forwards;
+    }
+
+    .project-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 25px;
+    }
+
+    .project-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(132, 94, 247, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(132, 94, 247, 0.9);
+    }
+
+    .project-item h3 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ede8f8;
+    }
+
+    .project-item p {
+      font-weight: 300;
+      font-size: 1rem;
+      color: #c5b7f0;
+      line-height: 1.5;
+    }
+
+    .project-item a {
+      margin-top: 10px;
+      display: inline-block;
+      font-weight: 600;
+      color: #845ef7;
+      transition: color 0.3s ease;
+    }
+
+    .project-item a:hover {
+      color: #6b43c3;
+    }
+
+    /* Contact Section */
+    section#contact {
+      background: rgba(255, 255, 255, 0.07);
+      padding: 30px 40px;
+      border-radius: 15px;
+      margin-bottom: 70px;
+      animation: fadeInUp 2.4s ease forwards;
+      text-align: center;
+    }
+
+    section#contact p {
+      font-size: 1.2rem;
+      color: #d6d7e2;
+      margin-bottom: 20px;
+    }
+
+    section#contact a {
+      display: inline-block;
+      font-weight: 600;
+      color: #845ef7;
+      font-size: 1.2rem;
+      border: 2px solid #845ef7;
+      padding: 10px 25px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    section#contact a:hover {
+      background: #845ef7;
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: #888ca3;
+      margin-top: auto;
+      border-top: 1px solid #3a3f58;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header.hero h1 {
+        font-size: 2.5rem;
+      }
+      header.hero .tagline {
+        font-size: 1.2rem;
+      }
+      section#expertise {
+        grid-template-columns: 1fr;
+      }
+      .project-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Uzair Jerry</h1>
-    <p>Web Developer | Designer | Learner</p>
+  <header class="hero container">
+    <h1>Uzair Ahmad</h1>
+    <p class="tagline">The World's Leading Marketing Automation Solution Architect</p>
+    <p class="description">
+      Delivering unparalleled automation strategies that revolutionize business growth. 
+      Expert in crafting seamless marketing solutions with precision, innovation, and impact.
+    </p>
+    <a href="#contact" class="btn-primary">Get in Touch</a>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hi, I'm Uzair! I build websites and web apps. Welcome to my personal portfolio.</p>
-  </section>
+  <main class="container">
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        With over a decade of hands-on experience, I am the marketing automation powerhouse companies trust to transform their outreach and conversion strategies. 
+        I combine deep technical expertise with creative problem-solving to architect scalable, intelligent, and data-driven automation solutions that maximize ROI and drive exponential growth.
+      </p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Project 1:</strong> Portfolio Website</li>
-      <li><strong>Project 2:</strong> To-Do App</li>
-    </ul>
-  </section>
+    <section id="expertise">
+      <h2 class="section-title">Expertise & Skills</h2>
+      <div class="expertise-card">
+        <h3>Marketing Automation</h3>
+        <p>Mastery in platforms like HubSpot, Marketo, Pardot, and Salesforce Marketing Cloud to build sophisticated automated journeys.</p>
+      </div>
+      <div class="expertise-card">
+        <h3>Solution Architecture</h3>
+        <p>Designing robust, scalable marketing systems that integrate seamlessly across CRM, CMS, and analytics tools.</p>
+      </div>
+      <div class="expertise-card">
+        <h3>Data-Driven Strategies</h3>
+        <p>Leveraging customer insights and analytics to optimize campaigns and deliver personalized experiences at scale.</p>
+      </div>
+      <div class="expertise-card">
+        <h3>Cross-Functional Leadership</h3>
+        <p>Leading teams and aligning marketing, sales, and IT to ensure flawless automation execution and business impact.</p>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: uzair@example.com</p>
-  </section>
+    <section id="projects">
+      <h2 class="section-title">Selected Projects</h2>
+      <ul class="project-list">
+        <li class="project-item">
+          <h3>Global Marketing Automation Platform</h3>
+          <p>Architected a multi-channel automation platform for a Fortune 500 company, boosting lead conversion by 45%.</p>
+          <a href="#" target="_blank" rel="noopener noreferrer">View Case Study</a>
+        </li>
+        <li class="project-item">
+          <h3>AI-Powered Campaign Personalization</h3>
+          <p>Implemented AI-driven personalization workflows that increased engagement rates by 60%.</p>
+          <a href="#" target="_blank" rel="noopener noreferrer">View Case Study</a>
+        </li>
+        <li class="project-item">
+          <h3>End-to-End Customer Journey Mapping</h3>
+          <p>Developed comprehensive customer journey maps to streamline automation triggers and improve user retention.</p>
+          <a href="#" target="_blank" rel="noopener noreferrer">View Case Study</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Get In Touch</h2>
+      <p>Ready to elevate your marketing automation to the next level? Let’s talk.</p>
+      <a href="mailto:uzair@example.com">Email Me</a>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Uzair Jerry</p>
+    &copy; 2025 Uzair Ahmad. All rights reserved.
   </footer>
 </body>
 </html>
