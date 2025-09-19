@@ -4,21 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Uzair Ahmad | Marketing Automation Solution Architect</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
+  <style>
+    /* ====== RESET & BASE STYLES ====== */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #e0e6f1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    html, body {
+      font-family: 'Inter', sans-serif;
       scroll-behavior: smooth;
+      background: linear-gradient(120deg, #1a1f2b, #141821);
+      color: #f0f4f8;
+      line-height: 1.6;
     }
 
     a {
@@ -27,256 +28,221 @@
     }
 
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
     }
 
+    /* ====== HERO ====== */
     header.hero {
       text-align: center;
-      padding: 100px 20px 80px;
-      animation: fadeInDown 1.2s ease forwards;
+      padding: 6rem 2rem 4rem;
+      background: radial-gradient(circle at 30% 20%, #2c3e50, transparent 60%);
+      animation: fadeIn 1.2s ease-out;
     }
 
     header.hero h1 {
-      font-size: 3.5rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-      color: #f9f9f9;
-      text-shadow: 0 0 10px #845ef7;
+      font-size: 4rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #845ef7, #5f27cd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
     }
 
-    header.hero .tagline {
+    .tagline {
       font-size: 1.5rem;
-      font-weight: 300;
-      color: #c5b7f0;
-      margin-bottom: 25px;
-      letter-spacing: 0.06em;
+      color: #a0a4b8;
+      margin-bottom: 1.5rem;
     }
 
-    header.hero .description {
+    .description {
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
       font-size: 1.1rem;
-      max-width: 650px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
-      color: #d1d4e0;
+      color: #cfd5e1;
     }
 
-    header.hero .btn-primary {
-      background: #845ef7;
-      padding: 14px 36px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      border-radius: 30px;
-      color: #fff;
-      box-shadow: 0 5px 15px rgba(132, 94, 247, 0.6);
-      transition: background 0.3s ease;
+    .btn-primary {
       display: inline-block;
-      cursor: pointer;
-    }
-
-    header.hero .btn-primary:hover {
-      background: #6b43c3;
-      box-shadow: 0 8px 25px rgba(107, 67, 195, 0.8);
-    }
-
-    h2.section-title {
-      text-align: center;
-      font-size: 2.5rem;
+      background: #845ef7;
+      padding: 14px 32px;
+      font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 40px;
-      color: #d1c4e9;
-      text-shadow: 0 0 5px #8e7cc3;
-      animation: fadeInUp 1s ease forwards;
+      color: #fff;
+      border-radius: 50px;
+      transition: 0.3s;
+      box-shadow: 0 8px 24px rgba(132, 94, 247, 0.4);
     }
 
-    section#about {
-      background: rgba(255, 255, 255, 0.07);
-      border-radius: 15px;
-      padding: 30px 40px;
-      margin-bottom: 70px;
-      animation: fadeInUp 1.5s ease forwards;
+    .btn-primary:hover {
+      background: #6b43c3;
+      box-shadow: 0 10px 30px rgba(132, 94, 247, 0.6);
+      transform: translateY(-2px);
     }
 
-    section#about p {
-      font-size: 1.2rem;
-      line-height: 1.7;
-      color: #d6d7e2;
+    /* ====== SECTION TITLES ====== */
+    h2.section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: #c7b9ff;
+      position: relative;
     }
 
-    section#expertise {
+    h2.section-title::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #845ef7;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 5px;
+    }
+
+    /* ====== SECTIONS ====== */
+    section {
+      margin-bottom: 5rem;
+      animation: fadeUp 1s ease-out forwards;
+    }
+
+    #about, #contact {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    #about p, #contact p {
+      font-size: 1.1rem;
+      color: #ccd2e3;
+    }
+
+    /* ====== EXPERTISE ====== */
+    #expertise {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
-      margin-bottom: 70px;
-      animation: fadeInUp 1.8s ease forwards;
     }
 
     .expertise-card {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.06);
       border-radius: 15px;
-      padding: 25px 20px;
-      box-shadow: 0 0 15px rgba(132, 94, 247, 0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(132, 94, 247, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
     }
 
     .expertise-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(132, 94, 247, 0.9);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(132, 94, 247, 0.4);
     }
 
     .expertise-card h3 {
-      font-weight: 600;
-      margin-bottom: 15px;
-      color: #ede8f8;
+      color: #f0ebff;
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
     }
 
     .expertise-card p {
-      font-weight: 300;
-      font-size: 1rem;
-      color: #c5b7f0;
-      line-height: 1.5;
-      flex-grow: 1;
+      color: #bfbfe3;
+      font-size: 0.95rem;
     }
 
-    /* Fix cross-functional leadership card alignment */
-    .expertise-card.cross-functional {
-      align-items: flex-start;
-      text-align: left;
-    }
-
-    section#projects {
-      animation: fadeInUp 2.1s ease forwards;
-    }
-
+    /* ====== PROJECTS ====== */
     .project-list {
-      list-style: none;
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
     }
 
     .project-item {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
       border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 0 15px rgba(132, 94, 247, 0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(132, 94, 247, 0.2);
     }
 
     .project-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(132, 94, 247, 0.9);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(132, 94, 247, 0.3);
     }
 
     .project-item h3 {
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #ede8f8;
+      color: #f0ebff;
+      margin-bottom: 0.7rem;
     }
 
     .project-item p {
-      font-weight: 300;
-      font-size: 1rem;
-      color: #c5b7f0;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      color: #c1c6dd;
     }
 
     .project-item a {
-      margin-top: 10px;
       display: inline-block;
+      margin-top: 0.8rem;
+      color: #a78bfa;
       font-weight: 600;
-      color: #845ef7;
       transition: color 0.3s ease;
     }
 
     .project-item a:hover {
-      color: #6b43c3;
+      color: #caa9ff;
     }
 
-    section#contact {
-      background: rgba(255, 255, 255, 0.07);
-      padding: 30px 40px;
-      border-radius: 15px;
-      margin-bottom: 70px;
-      animation: fadeInUp 2.4s ease forwards;
-      text-align: center;
-    }
-
-    section#contact p {
-      font-size: 1.2rem;
-      color: #d6d7e2;
-      margin-bottom: 20px;
-    }
-
-    section#contact a {
+    /* ====== CONTACT ====== */
+    #contact a {
       display: inline-block;
-      font-weight: 600;
-      color: #845ef7;
-      font-size: 1.2rem;
+      margin-top: 1rem;
+      padding: 12px 30px;
       border: 2px solid #845ef7;
-      padding: 10px 25px;
       border-radius: 30px;
+      color: #845ef7;
+      font-weight: 600;
       transition: all 0.3s ease;
     }
 
-    section#contact a:hover {
+    #contact a:hover {
       background: #845ef7;
       color: #fff;
     }
 
+    /* ====== FOOTER ====== */
     footer {
       text-align: center;
-      padding: 20px;
-      font-weight: 300;
+      padding: 2rem;
+      color: #7a7f98;
       font-size: 0.9rem;
-      color: #888ca3;
+      border-top: 1px solid #2d3142;
       margin-top: auto;
-      border-top: 1px solid #3a3f58;
     }
 
-    @keyframes fadeInDown {
-      0% {
-        opacity: 0;
-        transform: translateY(-40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* ====== ANIMATIONS ====== */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
+    /* ====== RESPONSIVE ====== */
     @media (max-width: 600px) {
       header.hero h1 {
         font-size: 2.5rem;
       }
-      header.hero .tagline {
+
+      .tagline {
         font-size: 1.2rem;
       }
-      section#expertise {
-        grid-template-columns: 1fr;
-      }
-      .project-list {
-        grid-template-columns: 1fr;
-      }
-      .expertise-card.cross-functional {
-        text-align: center;
-        align-items: center;
+
+      .description {
+        font-size: 1rem;
       }
     }
   </style>
@@ -286,8 +252,7 @@
     <h1>Uzair Ahmad</h1>
     <p class="tagline">The World's Leading Marketing Automation Solution Architect</p>
     <p class="description">
-      With 6+ years in the technology industry specializing in Salesforce Marketing Cloud, Marketing Automation, and Salesforce Administration. 
-      Proven ability to design, build, and implement scalable solutions that boost customer engagement, optimize capital markets, and increase ROI.
+      With 6+ years in the technology industry specializing in Salesforce Marketing Cloud, Marketing Automation, and Salesforce Administration. Proven ability to design, build, and implement scalable solutions that boost customer engagement, optimize capital markets, and increase ROI.
     </p>
     <a href="#contact" class="btn-primary">Get in Touch</a>
   </header>
@@ -297,7 +262,7 @@
       <h2 class="section-title">About Me</h2>
       <p>
         I excel in business stakeholder management, deeply analyzing business requirements, processes, and system capabilities to craft tailored solutions.
-        My expertise spans email marketing and automation tools like Salesforce Marketing Cloud, Marketo, HubSpot, and more. 
+        My expertise spans email marketing and automation tools like Salesforce Marketing Cloud, Marketo, HubSpot, and more.
         I’m experienced with Salesforce releases and provide detailed impact assessments. Proficient in Journey Builder, CRM integrations, and analytics platforms including Tableau, Looker, and PowerBi.
         I am passionate about leveraging web analytics and managing integrations across platforms via automation, always driving efficiency and excellence.
       </p>
@@ -311,7 +276,7 @@
       </div>
       <div class="expertise-card">
         <h3>HubSpot Expertise</h3>
-        <p>Extensive experience using HubSpot to create inbound marketing campaigns, automate lead nurturing workflows, and generate actionable analytics to increase conversions and sales pipeline velocity.</p>
+        <p>Extensive experience using HubSpot to create inbound marketing campaigns, automate lead nurturing workflows, and generate actionable analytics.</p>
       </div>
       <div class="expertise-card">
         <h3>Solution Architecture</h3>
@@ -319,35 +284,35 @@
       </div>
       <div class="expertise-card">
         <h3>Data-Driven Strategies</h3>
-        <p>Leveraging customer insights and analytics platforms (Tableau, Looker, PowerBi) to optimize campaigns and deliver personalized experiences at scale.</p>
+        <p>Leveraging analytics platforms (Tableau, Looker, PowerBi) to optimize campaigns and deliver personalized experiences.</p>
       </div>
-      <div class="expertise-card cross-functional">
+      <div class="expertise-card">
         <h3>Cross-Functional Leadership</h3>
-        <p>Leading teams across marketing, sales, and IT, aligning stakeholders to ensure flawless automation execution and measurable business impact.</p>
+        <p>Leading cross-functional teams and aligning stakeholders to ensure measurable automation success.</p>
       </div>
     </section>
 
     <section id="projects">
-      <h2 class="section-title">Selected Projects & Experience</h2>
+      <h2 class="section-title">Selected Projects</h2>
       <ul class="project-list">
         <li class="project-item">
           <h3>Salesforce Marketing Cloud Consultant</h3>
-          <p>Consulted for clients including Pink Noise Projects, American Standards Lixil Group, Zelis, Medtronic, and Lev. Led implementations improving efficiency and automation across platforms.</p>
+          <p>Consulted for clients including Pink Noise Projects, American Standards Lixil Group, Zelis, Medtronic, and Lev. Led implementations improving efficiency and automation.</p>
         </li>
         <li class="project-item">
           <h3>Marketing Automation Architect</h3>
-          <p>Designed and managed global Salesforce Marketing Cloud solutions, integrating with Marketo and other CRM tools to reduce manual data entry by 80% and increase ROI.</p>
+          <p>Managed global Marketing Cloud solutions, integrating with CRM tools to reduce manual tasks by 80% and increase ROI.</p>
         </li>
         <li class="project-item">
           <h3>Data & Analytics Integration</h3>
-          <p>Developed dashboards and reports using Salesforce Analytics, Tableau, and Looker to track KPIs, lead generation, and conversion metrics, empowering data-driven decision-making.</p>
+          <p>Developed dashboards and reports using Salesforce Analytics, Tableau, and Looker to track KPIs and empower insights.</p>
         </li>
       </ul>
     </section>
 
     <section id="contact">
       <h2 class="section-title">Get In Touch</h2>
-      <p>Ready to elevate your marketing automation and drive exceptional business growth? Let’s connect.</p>
+      <p>Ready to elevate your marketing automation and drive exceptional growth? Let’s connect.</p>
       <a href="mailto:uzair@example.com">Email Me</a>
     </section>
   </main>
